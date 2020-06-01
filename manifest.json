@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "ResponseHidden",
+    "version": "1.0",
+    "description": "Hides responses for those handling Support Apprentice Hiring",
+    "icons": {
+      "16": "icon_16.png",
+      "32": "icon_32.png",
+      "48": "icon_48.png",
+      "128": "icon_128.png"
+    },
+    "permissions": ["https://hire.lever.co/*", "activeTab", "storage"],
+    "browser_action": {
+      "default_icon": "icon_16.png",
+      "default_title": "ResponseHidden v1.0: I live to redact!",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "https://hire.lever.co/*"
+          ],
+          "js": ["jquery-3.4.1.min.js", "ByeByeBias.user.js"]
+        }
+      ]
+  }
